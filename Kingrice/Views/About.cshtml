@@ -1,0 +1,66 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.About>
+@*@using ContentModels = Umbraco.Web.PublishedModels;*@
+@using ContentModels = Kingrice.Models.UmbracoCmsContent;
+@{
+	Layout = "Layout.cshtml";
+	//var aboutPage = (ContentModels.About)Model.Root();
+	var aboutPage = Model;
+}
+
+<!-- about section start -->
+<div class="about_section layout_padding">
+	<div class="container-fluid">
+		<div class="about_taital_main">
+			<div class="about_left">
+				@*<div class="about_img_1"><img src="images/about-img1.png"></div>*@
+				@*<div class="about_img_1"><img src="@aboutPage.AboutLogo.Url"></div>*@
+				<div class="about_img_1"><img src="@Model.AboutLogo.Url"></div>        @*https://igorsvr.github.io/igors/*@
+			</div>
+			<br />
+			<div class="about_middle">
+				@*<div class="about_taital">About Us</div>*@
+				@*<div class="about_taital">@aboutPage.AboutTitle</div>*@
+				<div class="about_taital">@Model.AboutTitle</div>
+				@*<p class="about_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem </p>*@
+				@*<p class="about_text">@aboutPage.AboutContent</p>*@
+
+
+				<p class="about_text">@Model.AboutContent</p>
+				<div class="btn_main">
+					@*<div class="started_text"><a href="@aboutPage.AboutVideoUrl">@aboutPage.AboutTitle</a></div>*@
+					@*<div class="started_text"><a href="@Model.AboutVideoUrl">@Model.AboutTitle</a></div>*@
+					@*<div class="arrow_bt"><a href="#"><i class="fa fa-arrow-right"></i></a></div>*@
+				</div>
+			</div>
+			<div class="about_right">
+				@*<div class="about_img"><img src="images/about-img.png"></div>*@
+				<br />
+				<br />
+				<div class="about_img"><img src="@Model.AboutBanner.Url"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- about section end -->
+<!-- about section start -->
+@*<div class="about_section layout_padding">
+	<div class="container-fluid">
+		<div class="about_taital_main">
+			<div class="about_left">
+				<div class="about_img_1"><img src="~/Style/images/about-img1.png"></div>
+			</div>
+			<div class="about_middle">
+				<div class="about_taital">About Us</div>
+				<p class="about_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem </p>
+				<div class="btn_main">
+					<div class="started_text"><a href="~/recipe/">Read More</a></div>
+					<div class="arrow_bt"><a href="#"><i class="fa fa-arrow-right"></i></a></div>
+				</div>
+			</div>
+			<div class="about_right">
+				<div class="about_img"><img src="~/Style/images/about-img.png"></div>
+			</div>
+		</div>
+	</div>
+</div>*@
+<!-- about section end -->

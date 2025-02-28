@@ -1,0 +1,422 @@
+{
+  "name": "MyFormData",
+  "created": "2025-02-22T13:41:20.2489543+01:00",
+  "pages": [
+    {
+      "fieldSets": [
+        {
+          "caption": "Personal Address",
+          "sortOrder": 0,
+          "id": "a2ed3cd9-5243-45aa-8ec3-9787d847e5c7",
+          "page": "00000000-0000-0000-0000-000000000000",
+          "containers": [
+            {
+              "caption": null,
+              "width": 12,
+              "fields": [
+                {
+                  "caption": "Full Name",
+                  "tooltip": "Personal (Full Name)",
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "fullName",
+                  "id": "7fde01bd-1db0-49a6-b0db-d65778b904fa",
+                  "fieldTypeId": "3f92e01b-29e2-4a30-bf33-9df5580ed52c",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": true,
+                  "regex": null,
+                  "requiredErrorMessage": null,
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "d17d5465-115e-44e3-80df-f99e1fd43e26",
+                    "enabled": false,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": []
+                  },
+                  "settings": {
+                    "DefaultValue": "",
+                    "Placeholder": "",
+                    "ShowLabel": "",
+                    "MaximumLength": "",
+                    "FieldType": "",
+                    "AutocompleteAttribute": ""
+                  },
+                  "preValues": [],
+                  "parsedPreValues": [],
+                  "allowedUploadTypes": null,
+                  "allowMultipleFileUploads": true
+                },
+                {
+                  "caption": "My Personal Data",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "myPersonalData",
+                  "id": "46060f40-c298-4954-87b7-9e1f05544b6c",
+                  "fieldTypeId": "fab43f20-a6bf-11de-a28f-9b5755d89593",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": false,
+                  "regex": "",
+                  "requiredErrorMessage": null,
+                  "invalidErrorMessage": "",
+                  "condition": {
+                    "id": "9cb0042f-c9cc-42e6-b9a0-f5a19c635904",
+                    "enabled": false,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": []
+                  },
+                  "settings": {
+                    "DefaultValue": "",
+                    "ShowLabel": ""
+                  },
+                  "preValues": [
+                    "MyEmail",
+                    "MyPhone"
+                  ],
+                  "parsedPreValues": [
+                    {
+                      "value": "MyEmail",
+                      "caption": null
+                    },
+                    {
+                      "value": "MyPhone",
+                      "caption": null
+                    }
+                  ],
+                  "allowedUploadTypes": null,
+                  "allowMultipleFileUploads": true
+                },
+                {
+                  "caption": "Personal Email",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "personalEmail",
+                  "id": "fe4030f5-f938-43c8-91d5-10c424bd14df",
+                  "fieldTypeId": "3f92e01b-29e2-4a30-bf33-9df5580ed52c",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": true,
+                  "regex": null,
+                  "requiredErrorMessage": null,
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "9658305c-bc95-4c54-bb73-4d28b51ed4e4",
+                    "enabled": true,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": [
+                      {
+                        "id": "00000000-0000-0000-0000-000000000000",
+                        "field": "46060f40-c298-4954-87b7-9e1f05544b6c",
+                        "operator": "Is",
+                        "value": "MyEmail"
+                      }
+                    ]
+                  },
+                  "settings": {
+                    "DefaultValue": "",
+                    "Placeholder": "",
+                    "ShowLabel": "",
+                    "MaximumLength": "",
+                    "FieldType": "",
+                    "AutocompleteAttribute": ""
+                  },
+                  "preValues": [],
+                  "parsedPreValues": [],
+                  "allowedUploadTypes": null,
+                  "allowMultipleFileUploads": true
+                },
+                {
+                  "caption": "Personal Phone",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "personalPhone",
+                  "id": "e7cd7f51-6ecd-4e29-dcae-70674992ddff",
+                  "fieldTypeId": "3f92e01b-29e2-4a30-bf33-9df5580ed52c",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": false,
+                  "regex": null,
+                  "requiredErrorMessage": null,
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "6affdf8c-c9d6-4eef-a9a3-7099cfe8d3f9",
+                    "enabled": true,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": [
+                      {
+                        "id": "00000000-0000-0000-0000-000000000000",
+                        "field": "46060f40-c298-4954-87b7-9e1f05544b6c",
+                        "operator": "Is",
+                        "value": "MyPhone"
+                      }
+                    ]
+                  },
+                  "settings": {
+                    "DefaultValue": "",
+                    "Placeholder": "",
+                    "ShowLabel": "",
+                    "MaximumLength": "",
+                    "FieldType": "",
+                    "AutocompleteAttribute": ""
+                  },
+                  "preValues": [],
+                  "parsedPreValues": [],
+                  "allowedUploadTypes": null,
+                  "allowMultipleFileUploads": true
+                }
+              ]
+            }
+          ],
+          "condition": {
+            "id": "725bb2e5-17e3-49ae-b894-973d9e2d6408",
+            "enabled": false,
+            "actionType": "Show",
+            "logicType": "All",
+            "rules": []
+          }
+        }
+      ],
+      "caption": "Contact information",
+      "sortOrder": 0,
+      "id": "12f54c53-ffd6-4fd9-9425-1186f4f7713d",
+      "form": "00000000-0000-0000-0000-000000000000",
+      "buttonCondition": null
+    },
+    {
+      "fieldSets": [
+        {
+          "caption": "Address Group",
+          "sortOrder": 0,
+          "id": "c2ab9288-1470-45d4-8ce7-cc303afd98c8",
+          "page": "00000000-0000-0000-0000-000000000000",
+          "containers": [
+            {
+              "caption": "",
+              "width": 12,
+              "fields": [
+                {
+                  "caption": "House Number",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "houseNumber",
+                  "id": "a58cbb0a-77bf-47e9-e600-986c4f6d5d95",
+                  "fieldTypeId": "3f92e01b-29e2-4a30-bf33-9df5580ed52c",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": false,
+                  "regex": null,
+                  "requiredErrorMessage": null,
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "5ec1ffd2-ce7c-45bb-b8c2-a80e178138eb",
+                    "enabled": false,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": []
+                  },
+                  "settings": {
+                    "DefaultValue": "",
+                    "Placeholder": "",
+                    "ShowLabel": "",
+                    "MaximumLength": "",
+                    "FieldType": "",
+                    "AutocompleteAttribute": ""
+                  },
+                  "preValues": [],
+                  "parsedPreValues": [],
+                  "allowedUploadTypes": null,
+                  "allowMultipleFileUploads": true
+                },
+                {
+                  "caption": "Street",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "street",
+                  "id": "a65e4863-63b8-4724-9d65-e057f39ad42d",
+                  "fieldTypeId": "3f92e01b-29e2-4a30-bf33-9df5580ed52c",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": false,
+                  "regex": null,
+                  "requiredErrorMessage": null,
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "5d1b8e99-9b7c-46a1-89f2-21a8a948214c",
+                    "enabled": false,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": []
+                  },
+                  "settings": {
+                    "DefaultValue": "",
+                    "Placeholder": "",
+                    "ShowLabel": "",
+                    "MaximumLength": "",
+                    "FieldType": "",
+                    "AutocompleteAttribute": ""
+                  },
+                  "preValues": [],
+                  "parsedPreValues": [],
+                  "allowedUploadTypes": null,
+                  "allowMultipleFileUploads": true
+                },
+                {
+                  "caption": "City",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "city",
+                  "id": "ecdb5c4b-e189-4ecb-cc99-7623f16e1140",
+                  "fieldTypeId": "3f92e01b-29e2-4a30-bf33-9df5580ed52c",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": false,
+                  "regex": null,
+                  "requiredErrorMessage": null,
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "5a4ced57-8f04-475c-a825-2659ab69331d",
+                    "enabled": false,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": []
+                  },
+                  "settings": {
+                    "DefaultValue": "",
+                    "Placeholder": "",
+                    "ShowLabel": "",
+                    "MaximumLength": "",
+                    "FieldType": "",
+                    "AutocompleteAttribute": ""
+                  },
+                  "preValues": [],
+                  "parsedPreValues": [],
+                  "allowedUploadTypes": null,
+                  "allowMultipleFileUploads": true
+                },
+                {
+                  "caption": "Country",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "country",
+                  "id": "0728520a-d741-4e11-8d09-dd5290b43ce3",
+                  "fieldTypeId": "0dd29d42-a6a5-11de-a2f2-222256d89593",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": false,
+                  "regex": "",
+                  "requiredErrorMessage": null,
+                  "invalidErrorMessage": "",
+                  "condition": {
+                    "id": "919a6926-cf70-49db-a1bb-43497f925277",
+                    "enabled": false,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": []
+                  },
+                  "settings": {
+                    "DefaultValue": "",
+                    "AllowMultipleSelections": "",
+                    "ShowLabel": "",
+                    "AutocompleteAttribute": ""
+                  },
+                  "preValues": [
+                    "US",
+                    "UK",
+                    "EU",
+                    "Asia",
+                    "Russia",
+                    "Africa"
+                  ],
+                  "parsedPreValues": [
+                    {
+                      "value": "US",
+                      "caption": null
+                    },
+                    {
+                      "value": "UK",
+                      "caption": null
+                    },
+                    {
+                      "value": "EU",
+                      "caption": null
+                    },
+                    {
+                      "value": "Asia",
+                      "caption": null
+                    },
+                    {
+                      "value": "Russia",
+                      "caption": null
+                    },
+                    {
+                      "value": "Africa",
+                      "caption": null
+                    }
+                  ],
+                  "allowedUploadTypes": null,
+                  "allowMultipleFileUploads": true
+                }
+              ]
+            }
+          ],
+          "condition": {
+            "id": "6d8b3a1f-654b-48ef-99e4-059e45948cde",
+            "enabled": false,
+            "actionType": "Show",
+            "logicType": "All",
+            "rules": []
+          }
+        }
+      ],
+      "caption": "Address Page",
+      "sortOrder": 0,
+      "id": "220a5e95-8cad-4dc4-989a-20d829e3d330",
+      "form": "00000000-0000-0000-0000-000000000000",
+      "buttonCondition": null
+    }
+  ],
+  "id": "a5aae62c-989a-41d3-b533-5f3f5c258f66",
+  "fieldIndicationType": "MarkMandatoryFields",
+  "indicator": "*",
+  "showValidationSummary": false,
+  "hideFieldValidation": false,
+  "requiredErrorMessage": "Please provide a value for {0}",
+  "invalidErrorMessage": "Please provide a valid value for {0}",
+  "messageOnSubmit": "Thank you",
+  "goToPageOnSubmit": 0,
+  "xPathOnSubmit": null,
+  "manualApproval": false,
+  "storeRecordsLocally": true,
+  "autocompleteAttribute": "",
+  "cssClass": null,
+  "disableDefaultStylesheet": false,
+  "useClientDependency": false,
+  "workflows": [
+    "2e858f24-7790-47d7-bab3-a4d742e6dec8"
+  ],
+  "datasource": null,
+  "submitLabel": "Submit",
+  "nextLabel": "Next",
+  "prevLabel": "Previous",
+  "folderId": null
+}

@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+	var link = Model.MacroParameters["link"].ToString();
+	var caption = Model.MacroParameters["caption"].ToString();
+	var newWindow = Model.MacroParameters["newWindow"].ToString() == "1" ? "_blank" : null;
+}
+
+<div>
+	<div class="btn_main">
+		<div class="started_text"><a href="@link">More</a></div>
+		<a href="@link" target="@newWindow" button class="btn  my-2 my-sm-0 nav_search-btn" type="@caption"></a>
+		<div class="arrow_bt"><a href="@link"><i class="fa fa-arrow-right"></i></a></div>
+	</div>
+</div>
+@*<div class="btn_main">
+	<div class="started_text"><a href="#">Read More</a></div>
+	<div class="arrow_bt"><a href="#"><i class="fa fa-arrow-right"></i></a></div>
+</div>*@

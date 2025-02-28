@@ -1,0 +1,243 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using ContentModels = Kingrice.Models.UmbracoCmsContent;
+@using Umbraco.Forms.Mvc
+
+@{
+	@Html.RenderUmbracoFormDependencies()
+	var pageId = Model.MacroParameters["menuPage"].ToString();
+	var numberofitems = Convert.ToInt32(Model.MacroParameters["numberofitems"].ToString());
+
+	var myPage = Umbraco.Content(pageId);
+	var myMenus = myPage.Children().Where(x => x.IsVisible()).Take(numberofitems);
+}
+
+<!-- menu section start -->
+<div class="menu_section layout_padding">
+	@*<section class="menu_section layout_padding">*@
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<span>Recipes</span>
+				<h1 class="menu_taital">Our Menu</h1>
+			</div>
+		</div>
+		<div class="menu_section_2">
+			<div class="row">
+				<div class="col-md-6 padding_left0">
+					<div class="menu_box">
+						@*<h1 class="recipe_text">01 Recipe</h1>*@
+						<h2 class="recipe_text">01 Breakfast</h2>
+						@foreach (ContentModels.Recipe item in myMenus)
+						{
+							if (item.MenuType == "Breakfast")
+							{
+								<div class="manu_main">
+									<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+									@*<h4 class="rate_text">$10</h4>*@
+									<h4 class="rate_text">$@item.MealPrice</h4>
+								</div>
+								//}
+								foreach (var tag in item.MealContent)
+								{
+									<span>@tag</span>
+
+
+
+									var ca = tag != item.MealContent.Last() ? ", " : "";
+									@ca
+								}
+
+								<!--<div class="manu_main">
+					<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+										@*<h4 class="rate_text">$10</h4>*@
+										 <h4 class="rate_text">@item.MealPrice</h4>-->
+
+							}
+						}
+						@*@foreach(var tag in item.MealContent)
+				{
+					<span>@tag</span>
+					var ca = tag != ITempDataProvider.MealContent.Last() ? ", " : "";
+					@ca
+				}*@
+
+						<p class="lorem_text">Many cooking customers like our services due to the fact that are really enjoing our tasty meal.</p>
+						@*<h1 class="recipe_text">02 Recipe</h1>
+				<div class="manu_main">
+					<div class="img_1"><img src="~Style/images/img-2.png"><span class="mixer_text">Rice Mixer</span></div>
+					<h4 class="rate_text">$10</h4>
+				</div>
+				<p class="lorem_text">pposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,</p>*@
+					</div>
+				</div>
+				<div class="col-md-6 padding_left0">
+					<div class="menu_box">
+						@*<h1 class="recipe_text">01 Recipe</h1>
+				<div class="manu_main">
+					<div class="img_1"><img src="~Style/images/img-2.png"><span class="mixer_text">Rice Mixer</span></div>
+					<h4 class="rate_text">$10</h4>
+				</div>*@
+						<h2 class="recipe_text">02 Lunch</h2>
+						@foreach (ContentModels.Recipe item in myMenus)
+						{
+							if (item.MenuType == "Lunch")
+							{
+								<div class="manu_main">
+									<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+									@*<h4 class="rate_text">$10</h4>*@
+									<h4 class="rate_text">$@item.MealPrice</h4>
+								</div>
+								//}
+								foreach (var tag in item.MealContent)
+								{
+									<span>@tag</span>
+
+									var ca = tag != item.MealContent.Last() ? ", " : "";
+									@ca
+								}
+
+								<!--<div class="manu_main">
+					<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+										@*<h4 class="rate_text">$10</h4>*@
+										 <h4 class="rate_text">@item.MealPrice</h4>-->
+
+							}
+						}
+						@*@foreach(var tag in item.MealContent)
+				{
+					<span>@tag</span>
+					var ca = tag != ITempDataProvider.MealContent.Last() ? ", " : "";
+					@ca
+				}*@
+
+					<p class="lorem_text">
+						For real lovers of a true meat is possible to have our steak for a lunch. Be ready for the mild one as a first place in our offer.
+						If you d´like rare or bloody, for us it is not any problem. We are prepared almost on everything.
+					</p>
+					</div>
+				</div>
+
+				<div class="col-md-6 padding_left0">
+					<div class="menu_box">
+						<h2 class="recipe_text">03 Dinner</h2>
+						@foreach (ContentModels.Recipe item in myMenus)
+						{
+							if (item.MenuType == "Dinner")
+							{
+								<div class="manu_main">
+									<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+									@*<h4 class="rate_text">$10</h4>*@
+									<h4 class="rate_text">@item.MealPrice</h4>
+								</div>
+								//}
+								foreach (var tag in item.MealContent)
+								{
+									<span>@tag</span>
+
+
+
+									var ca = tag != item.MealContent.Last() ? ", " : "";
+									@ca
+								}
+
+								<!--<div class="manu_main">
+					<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+										@*<h4 class="rate_text">$10</h4>*@
+										 <h4 class="rate_text">@item.MealPrice</h4>-->
+
+							}
+						}
+						@*@foreach(var tag in item.MealContent)
+				{
+					<span>@tag</span>
+					var ca = tag != ITempDataProvider.MealContent.Last() ? ", " : "";
+					@ca
+				}*@
+
+					<p class="lorem_text">
+						Nothing could be broken with some pieces of rice, and chicken. If you want to some changes in your repertoire, we can add some other additives for you.
+						No matter if you like long rice, small pieces are nearly the same- just joking. Or we can give you small cut of pork instead of chicken if you don´t want that kind of food.
+					</p>
+					</div>
+					@*</div>
+			</div>*@
+					<!--MyButton-->
+					<!--<div>
+						<div class="btn_main">
+							<div class="started_text"><a href="@myPage.Url">More</a></div>
+							<a href="@myPage.Url" button class="btn  my-2 my-sm-0 nav_search-btn" type="@myPage.Name"></a>
+							<div class="arrow_bt"><a href="@myPage.Url"><i class="fa fa-arrow-right"></i></a></div>
+						</div>
+					</div>-->
+
+					<!--MyButton2-->
+					<!--<div class="col-md-12">
+						<a href="@myPage.Url" class="btn btn-primary px-4 py-3 mt-3">@myPage.Name</a>
+					</div>-->
+				</div>
+
+				<div class="col-md-6 padding_left0">
+					<div class="menu_box">
+						<h2 class="recipe_text">04 Drinks</h2>
+						@foreach (ContentModels.Recipe item in myMenus)
+						{
+							if (item.MenuType == "Drinks")
+							{
+								<div class="manu_main">
+									<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+									@*<h4 class="rate_text">$10</h4>*@
+									<h4 class="rate_text">@item.MealPrice</h4>
+								</div>
+								//}
+								foreach (var tag in item.MealContent)
+								{
+									<span>@tag</span>
+
+
+
+									var ca = tag != item.MealContent.Last() ? ", " : "";
+									@ca
+								}
+
+								<!--<div class="manu_main">
+				<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+									@*<h4 class="rate_text">$10</h4>*@
+									 <h4 class="rate_text">@item.MealPrice</h4>-->
+
+							}
+						}
+						@*@foreach(var tag in item.MealContent)
+			{
+				<span>@tag</span>
+				var ca = tag != ITempDataProvider.MealContent.Last() ? ", " : "";
+				@ca
+			}*@
+
+						<p class="lorem_text">Nothing could be better or wrong if there are some changes in your steady habits. No matter if it is a beer, wine, or simply vodka.
+						                      Cheers. Nazdarovie 🙂🍾. See you later. </p><br />
+					</div>
+					@*</div>
+		</div>*@
+				 
+					<!--MyButton-->
+				<div>
+					<div class="btn_main">
+						<br />
+						<hr />
+						<div class="started_text"><a href="@myPage.Url">More</a></div>
+						<a href="@myPage.Url" button class="btn  my-2 my-sm-0 nav_search-btn" type="@myPage.Name"></a>
+						<div class="arrow_bt"><a href="@myPage.Url"><i class="fa fa-arrow-right"></i></a></div>
+					</div>
+				</div>
+
+					<!--MyButton2-->
+					@*<div class="col-md-12">
+						<a href="@myPage.Url" class="btn btn-primary px-4 py-3 mt-3">@myPage.Name</a>
+					</div>*@
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+

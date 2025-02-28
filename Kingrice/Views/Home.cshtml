@@ -1,0 +1,306 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Home>
+@*@using ContentModels = Umbraco.Web.PublishedModels;*@
+@using ContentModels = Kingrice.Models.UmbracoCmsContent;
+@{
+	Layout = "Layout.cshtml";
+	var homePage = (ContentModels.Home)Model.Root();
+	var content = homePage.HomeContent;
+	 
+}
+
+<!-- banner section start -->
+<div class="banner_section layout_padding">
+	<div class="container">
+		<div id="main_slider" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="row">
+						<div class="col-md-6">
+							<h1 class="banner_taital">Menu for you <br><span style="color: #980200;">recipe</span></h1>
+							<!--HERE Change-->
+							<p class="banner_text"><p class="banner_text">@content</p>
+							@*<p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem </p>
+							HERE Change*@
+							@*<p class="banner_text"><p class="banner_text">@content</p>*@
+							<div class="btn_main">
+								<div class="started_text"><a href="~/recipe/">Read More</a></div>
+								<div class="arrow_bt"><a href="#"><i class="fa fa-arrow-right"></i></a></div>
+							</div>
+						</div>
+							<div class="col-md-6">
+								<div class="banner_img"><img src="~/Style/images/banner-img.png"></div>
+								<div class="banner_img">
+									@*<img src="@homePage.HomeImage.Url">*@ 	<!--position:relative-->
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="row">
+								<div class="col-md-6">
+									<h1 class="banner_taital">Menu for you <br><span style="color: #980200;">recipe</span></h1>
+									@*<p class="banner_text">The best choice of tasty meal in our city. Never forget. Just give it a try. When looking at its look a nd too smell. Simply the one. </p>*@
+									<div class="btn_main">
+										<div class="started_text"><a href="#">Read More</a></div>
+										<div class="arrow_bt"><a href="#"><i class="fa fa-arrow-right"></i></a></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="banner_img"><img src="~/Style/images/banner-img.png"></div>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="row">
+								<div class="col-md-6">
+									<h1 class="banner_taital">Rice <br><span style="color: #980200;">recipe</span></h1>
+									@*<p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem </p>*@
+									<div class="btn_main">
+										<div class="started_text"><a href="#">Read More</a></div>
+										<div class="arrow_bt"><a href="#"><i class="fa fa-arrow-right"></i></a></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="banner_img"><img src="~/Style/images/banner-img.png"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+						<i class="fa fa-angle-left"></i>
+					</a>
+					<a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+						<i class="fa fa-angle-right"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- banner section end -->
+		<!-- about section start -->
+		<div class="about_section layout_padding">
+			<div class="container-fluid">
+				<div class="about_taital_main">
+					<div class="about_left">
+						<div class="about_img_1"><img src="~/Style/images/about-img1.png"></div>
+					</div>
+					<div class="about_middle">
+						<div class="about_taital">About Us</div>
+						<p class="about_text">
+							We are here since 2022.
+
+							Our offer for a meal is very different from our opposite ones.
+
+							As too long established company we are specific in our services.
+
+							From 08:00 either you can choose breakfast, or variety of lunch, still we have the dinner for you. Until 20:00.
+						</p>
+						<div class="btn_main">
+							<div class="started_text"><a href="~/recipe/">Read More</a></div>
+							<div class="arrow_bt"><a href="#"><i class="fa fa-arrow-right"></i></a></div>
+						</div>
+					</div>
+					<div class="about_right">
+						<div class="about_img"><img src="~/Style/images/about-img.png"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- about section end -->
+		<!-- menu section start -->
+		<div class="menu_section layout_padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1 class="menu_taital">Our Menu</h1>
+					</div>
+				</div>
+				<div class="menu_section_2">
+					<div class="row">
+						<div class="col-md-6 padding_right0">
+							<div class="menu_box">
+								<h1 class="recipe_text">01 Breakfast</h1>
+								<div class="manu_main">
+									<div class="img_1"><img src="~/Style/images/img-2.png"><span class="mixer_text">Grilled Beef with potatoes</span></div>
+									<h4 class="rate_text">€7</h4>
+								</div>
+								<p class="lorem_text">
+									Here you are. We are offering a hot meal as a breakfast in our place. One warm meal in your stomache as a starter for your breakfast
+									is number one choice in your wakening days.
+								</p>
+								<br />
+								<br />
+
+								<h1 class="recipe_text">02 Lunch</h1>
+								<div class="manu_main">
+									<div class="img_1"><img src="~/Style/images/steak.jpg"><span class="mixer_text">Steak</span></div>
+									<h4 class="rate_text">€10</h4>
+								</div>
+								<p class="lorem_text">
+									For real lovers of a true meat is possible to have our steak for a lunch. Be ready for the mild one as a first place in our offer.
+									If you d´like rare or bloody, for us it is not any problem. We are prepared almost on everything.
+								</p>
+							</div>
+						</div>
+						<div class="col-md-6 padding_left0">
+							<div class="menu_box">
+								<h1 class="recipe_text">03 Dinner</h1>
+								<div class="manu_main">
+									<div class="img_1"><img src="~/Style/images/rice-chick.jpg"><span class="mixer_text">Grilled Chicken with Rice</span></div>
+									<h4 class="rate_text">€8</h4>
+								</div>
+								<p class="lorem_text">Nothing could be broken with some pieces of rice, and chicken. If you want to some changes in your repertoire, we can add some other additives for you. 
+								                      No matter if you like long rice, small pieces are nearly the same- just joking. Or we can give you small cut of pork instead of chicken if you don´t want that kind of food.</p>
+								<h1 class="recipe_text">04 Drinks</h1>
+								<div class="manu_main">
+									<div class="img_1"><img src="~/Style/images/delicious-beverage.jpg"><span class="mixer_text">Vodka Nemiroff</span></div>
+									<h4 class="rate_text">€9</h4>
+								</div>
+								<p class="lorem_text">Nothing could be better or wrong if there are some changes in your steady habits. No matter if it is a beer, wine, or simply vodka.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="btn_main_1">
+					<div class="read_bt"><a href="~/recipe/">Read More</a></div>
+					<div class="arrow_bt"><a href="#"><i class="fa fa-arrow-right"></i></a></div>
+				</div>
+			</div>
+		</div>
+		<!-- menu section end -->
+		<!-- read section start -->
+		<div class="read_section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="read_text">GET STARTED READY</div>
+					</div>
+				</div>
+				<div class="mail_main">
+					<div class="form-group">
+						<textarea class="update_mail" placeholder="Enter Your Email" rows="5" id="comment" name="Enter Your Email"></textarea>
+						<div class="subscribe_bt"><a href="#"><i class="fa fa-arrow-right"></i></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- read section end -->
+		<!-- testimonial section start -->
+		<div class="testimonial_section layout_padding">
+			<div class="container">
+				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 class="testimonial_taital">What Is Says Our Clients</h1>
+									<p class="testimonial_text">In my opinion feeling is a feeling and some food is simply tasty or not. For me first choice is in my favor. Friendly people who take care about you. So many lovely food.</p>
+									<div class="client_img"><img src="~/Style/images/IGI2.jpg"></div>
+									<h4 class="client_name">Jacksmith Sand</h4>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 class="testimonial_taital">What Is Says Our Clients</h1>
+									<p class="testimonial_text">There are many variations of food in this restaurant, as always I was really glad here. But some minority may have suffered alteration in some form, not every person have the same flavour for anything.</p>
+									<div class="client_img"><img src="~/Style/images/Deti_130.jpg"></div>
+									<h4 class="client_name">Horvat Daniel</h4>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 class="testimonial_taital">What Is Says Our Clients</h1>
+									<p class="testimonial_text">I was feeling like I am nearly at home in this restaurant. Personally I am eating everything, such wonderful service is too enough there.</p>
+									<div class="client_img"><img src="~/Style/images/PlazPivo.jpg"></div>
+									<h4 class="client_name">Peter Pan</h4>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 class="testimonial_taital">What Is Says Our Clients</h1>
+									<p class="testimonial_text"> Either you are so tired, you need small portion of wine, eggs, or coffee, you won´t regret in there.</p>
+									<div class="client_img"><img src="~/Style/images/client-img.png"></div>
+									<h4 class="client_name">Samuel Vodnik</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- testimonial section end -->
+		<!-- contact section start -->
+		<div class="contact_section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1 class="contact_taital">Contact Us</h1>
+					</div>
+				</div>
+				<div class="contact_section_2">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="mail_section">
+								<form action="">
+									<input type="text" class="mail_text" placeholder="Name" name="Name">
+									<input type="text" class="mail_text" placeholder="Phone Number" name="Phone Number">
+									<input type="text" class="mail_text" placeholder="Email" name="Email">
+									<textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
+									<div class="send_bt"><a href="#">Send</a></div>
+								</form>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="social_icon">
+								<ul>
+									<li><a href="https://www.facebook.com/igor.svrcek7"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								</ul>
+							</div>
+							<div class="location_text">
+								<ul>
+									<li>
+										<a href="#"><span class="padding_15"><img src="~/Style/images/map-icon.png"></span>Ukrajinská Michalovce </a>
+									</li>
+									<li>
+										<a href="#"><span class="padding_15"><img src="~/Style/images/call-icon.png"></span>(+421) 903286389</a>
+									</li>
+									<li>
+										<a href="#"><span class="padding_15"><img src="~/Style/images/mail-icon.png"></span>buldozerom@gmail.com</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid">
+				<div class="map_main">
+					<div class="map-responsive">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2630.5684857995366!2d21.9273658726472!3d48.75193918008305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47393224bb23fca7%3A0x88f73ab82be00c80!2sUkrajinsk%C3%A1%2C%20071%2001%20Michalovce!5e0!3m2!1ssk!2ssk!4v1739828144827!5m2!1ssk!2ssk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- contact section end -->
+		<!-- copyright section start -->
+		@*<div class="copyright_section">
+				<div class="container">
+					<p class="copyright_text">2020 All Rights Reserved. Design by <a href="https://html.design">Free Html Templates</a></p>
+				</div>
+			</div>*@
+		<!-- copyright section end -->
+	</div>
+</div>

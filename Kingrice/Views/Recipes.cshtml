@@ -1,0 +1,372 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Recipes>
+@using ContentModels = Kingrice.Models.UmbracoCmsContent;
+@{
+	var homepage = (ContentModels.Home)Model.Root();
+	Layout = "Layout.cshtml";
+}
+
+<!--<div class="header_section">
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="index.html"><img src="~Style/images/logo.png"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="about.html">About</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="recipes.html">Recipes</a>
+					</li>-->
+					@*<li class="nav-item">
+						<a class="nav-link" href="shop.html">Shop</a>
+					</li>*@
+					<!--<li class="nav-item">
+						<a class="nav-link" href="blog.html">Blog</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="testimonial.html">Testimonial</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="contact.html">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</div>-->
+<!-- header section end -->
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url('@Model.NavImageMenu.Url');" data-stellar-background-ratio="12">
+	<!--<div class="overlay"></div>
+	<div class="container">
+		<div class="row no-gutters slider-text align-items-md-center justify-content-center">
+			<div class="col-md-9 text-center">
+				<h1 class="mb-2 bread">@Model.RecipesTitle</h1>-->
+				@*<p class=breadcrumbs"><span class="mr-2"><a href="@homepage.Url">@homepage.Name<i class="ion-ios-arrow-forward"></i></a></span></p>*@
+			<!--</div>
+		</div>
+	</div>-->
+</section>
+
+<!-- menu section start -->
+<div class="menu_section layout_padding">
+	@*<section class="menu_section layout_padding">*@
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<span>@Model.RecipesTitle</span>
+				<h1 class="menu_taital">Our Menu</h1>
+			</div>
+		</div>
+		<div class="menu_section_2">
+			<div class="row">
+				<div class="col-md-6 padding_right0">
+					<div class="menu_box">
+						@*<h1 class="recipe_text">01 Recipe</h1>*@
+						<h2 class="recipe_text">01 Breakfast</h2>
+						@foreach (ContentModels.Recipe item in Model.Children())
+						{
+							if (item.MenuType == "Breakfast")
+							{
+								<div class="manu_main">
+									<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+									@*<h4 class="rate_text">$10</h4>*@
+									<h4 class="rate_text">$@item.MealPrice</h4>
+								</div>
+								//}
+								foreach (var tag in item.MealContent)
+								{
+									<span>@tag</span>
+
+
+
+									var ca = tag != item.MealContent.Last() ? ", " : "";
+									@ca
+								}
+
+								<!--<div class="manu_main">
+								<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+													@*<h4 class="rate_text">$10</h4>*@
+													 <h4 class="rate_text">@item.MealPrice</h4>-->
+
+							}
+						}
+						@*@foreach(var tag in item.MealContent)
+							{
+								<span>@tag</span>
+								var ca = tag != ITempDataProvider.MealContent.Last() ? ", " : "";
+								@ca
+							}*@
+
+					<p class="lorem_text">
+						Here you are. We are offering a hot meal as a breakfast in our place. One warm meal in your stomache as a starter for your breakfast
+						is number one choice in your wakening days.
+					</p>
+						@*<h1 class="recipe_text">02 Recipe</h1>
+							<div class="manu_main">
+								<div class="img_1"><img src="~Style/images/img-2.png"><span class="mixer_text">Rice Mixer</span></div>
+								<h4 class="rate_text">$10</h4>
+							</div>
+							<p class="lorem_text">pposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,</p>*@
+					</div>
+				</div>
+				<div class="col-md-6 padding_left0">
+					<div class="menu_box">
+						@*<h1 class="recipe_text">01 Recipe</h1>
+							<div class="manu_main">
+								<div class="img_1"><img src="~Style/images/img-2.png"><span class="mixer_text">Rice Mixer</span></div>
+								<h4 class="rate_text">$10</h4>
+							</div>*@
+						<h2 class="recipe_text">02 Lunch</h2>
+						@foreach (ContentModels.Recipe item in Model.Children())
+						{
+							if (item.MenuType == "Lunch")
+							{
+								<div class="manu_main">
+									<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+									@*<h4 class="rate_text">$10</h4>*@
+									<h4 class="rate_text">$@item.MealPrice</h4>
+								</div>
+								//}
+								foreach (var tag in item.MealContent)
+								{
+									<span>@tag</span>
+									var ca = tag != item.MealContent.Last() ? ", " : "";
+									@ca
+								}
+
+								<!--<div class="manu_main">
+								<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+													@*<h4 class="rate_text">$10</h4>*@
+													 <h4 class="rate_text">@item.MealPrice</h4>-->
+
+							}
+						}
+						@*@foreach(var tag in item.MealContent)
+							{
+								<span>@tag</span>
+								var ca = tag != ITempDataProvider.MealContent.Last() ? ", " : "";
+								@ca
+							}*@
+
+					<p class="lorem_text">
+						For real lovers of a true meat is possible to have our steak for a lunch. Be ready for the mild one as a first place in our offer.
+						If you d´like rare or bloody, for us it is not any problem. We are prepared almost on everything.
+					</p>
+					</div>
+				</div>
+				@*<h1 class="recipe_text">02 Recipe</h1>*@
+				@*<div class="manu_main">
+						<div class="img_1"><img src="~Style/images/img-2.png"><span class="mixer_text">Rice Mixer</span></div>
+						<h4 class="rate_text">$10</h4>
+					</div>
+					<p class="lorem_text">pposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,</p>*@
+				<div class="col-md-6 padding_right0">
+					<div class="menu_box">
+						<h2 class="recipe_text">03 Dinner</h2>
+						@foreach (ContentModels.Recipe item in Model.Children())
+						{
+							if (item.MenuType == "Dinner")
+							{
+								<div class="manu_main">
+									<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+									@*<h4 class="rate_text">$10</h4>*@
+									<h4 class="rate_text">@item.MealPrice</h4>
+								</div>
+								//}
+								foreach (var tag in item.MealContent)
+								{
+									<span>@tag</span>
+
+
+
+									var ca = tag != item.MealContent.Last() ? ", " : "";
+									@ca
+								}
+
+								<!--<div class="manu_main">
+								<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+													@*<h4 class="rate_text">$10</h4>*@
+													 <h4 class="rate_text">@item.MealPrice</h4>-->
+
+							}
+						}
+						@*@foreach(var tag in item.MealContent)
+							{
+								<span>@tag</span>
+								var ca = tag != ITempDataProvider.MealContent.Last() ? ", " : "";
+								@ca
+							}*@
+
+					<p class="lorem_text">
+						Nothing could be broken with some pieces of rice, and chicken. If you want to some changes in your repertoire, we can add some other additives for you.
+						No matter if you like long rice, small pieces are nearly the same- just joking. Or we can give you small cut of pork instead of chicken if you don´t want that kind of food.
+					</p>
+					</div>
+					@*</div>
+						</div>*@
+				</div>
+				<div class="col-md-6 padding_left0">
+					<div class="menu_box">
+						@*<h1 class="recipe_text">01 Recipe</h1>
+							<div class="manu_main">
+								<div class="img_1"><img src="~Style/images/img-2.png"><span class="mixer_text">Rice Mixer</span></div>
+								<h4 class="rate_text">$10</h4>
+							</div>*@
+						<h2 class="recipe_text">04 Drinks</h2>
+						@foreach (ContentModels.Recipe item in Model.Children())
+						{
+							if (item.MenuType == "Drinks")
+							{
+								<div class="manu_main">
+									<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+									@*<h4 class="rate_text">$10</h4>*@
+									<h4 class="rate_text">@item.MealPrice</h4>
+								</div>
+								//}
+								foreach (var tag in item.MealContent)
+								{
+									<span>@tag</span>
+
+									var ca = tag != item.MealContent.Last() ? ", " : "";
+									@ca
+								}
+
+								<!--<div class="manu_main">
+								<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+													@*<h4 class="rate_text">$10</h4>*@
+													 <h4 class="rate_text">@item.MealPrice</h4>-->
+
+							}
+						}
+						@*@foreach(var tag in item.MealContent)
+							{
+								<span>@tag</span>
+								var ca = tag != ITempDataProvider.MealContent.Last() ? ", " : "";
+								@ca
+							}*@
+
+					<p class="lorem_text">Nothing could be better or wrong if there are some changes in your steady habits. No matter if it is a beer, wine, or simply vodka.</p>
+					</div>
+				</div>
+				<div class="col-md-6 padding_right0">
+					<div class="menu_box">
+						@*<h1 class="recipe_text">01 Recipe</h1>
+							<div class="manu_main">
+								<div class="img_1"><img src="~Style/images/img-2.png"><span class="mixer_text">Rice Mixer</span></div>
+								<h4 class="rate_text">$10</h4>
+							</div>*@
+						<h2 class="recipe_text">05 Wine Card</h2>
+						@foreach (ContentModels.Recipe item in Model.Children())
+						{
+							if (item.MenuType == "Wine Cards")
+							{
+								<div class="manu_main">
+									<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+									@*<h4 class="rate_text">$10</h4>*@
+									<h4 class="rate_text">@item.MealPrice</h4>
+								</div>
+								//}
+								foreach (var tag in item.MealContent)
+								{
+									<span>@tag</span>
+
+									var ca = tag != item.MealContent.Last() ? ", " : "";
+									@ca
+								}
+
+								<!--<div class="manu_main">
+								<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+													@*<h4 class="rate_text">$10</h4>*@
+													 <h4 class="rate_text">@item.MealPrice</h4>-->
+
+							}
+						}
+						@*@foreach(var tag in item.MealContent)
+							{
+								<span>@tag</span>
+								var ca = tag != ITempDataProvider.MealContent.Last() ? ", " : "";
+								@ca
+							}*@
+						<p class="lorem_text">pposed to using 'Content here, content here', making it look like readable English. Many cooking customers like our services due to the fact that are really enjoing our tasty meal.</p>
+					</div>
+				</div>
+				<div class="col-md-6 padding_left0">
+					<div class="menu_box">
+						@*<h1 class="recipe_text">01 Recipe</h1>
+							<div class="manu_main">
+																				<div class="img_1"><img src="~Style/images/img-2.png"><span class="mixer_text">Rice Mixer</span></div>
+																				<h4 class="rate_text">$10</h4>
+							</div>*@
+						<h2 class="recipe_text">06 Desserts</h2>
+						@foreach (ContentModels.Recipe item in Model.Children())
+						{
+							if (item.MenuType == "Desserts")
+							{
+								<div class="manu_main">
+									<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+									@*<h4 class="rate_text">$10</h4>*@
+									<h4 class="rate_text">@item.MealPrice</h4>
+								</div>
+								//}
+								foreach (var tag in item.MealContent)
+								{
+									<span>@tag</span>
+									var ca = tag != item.MealContent.Last() ? ", " : "";
+									@ca
+								}
+
+								<!--<div class="manu_main">
+								<div class="img_1"><img src="@item.MealImage.Url"><span class="mixer_text">@item.MealName</span></div>
+													@*<h4 class="rate_text">$10</h4>*@
+													 <h4 class="rate_text">@item.MealPrice</h4>-->
+
+							}
+						}
+						@*@foreach(var tag in item.MealContent)
+							{
+											<span>@tag</span>
+											var ca = tag != ITempDataProvider.MealContent.Last() ? ", " : "";
+											@ca
+							}*@
+
+						<p class="lorem_text">pposed to using 'Content here, content here', making it look like readable English. Many cooking customers like our services due to the fact that are really enjoing our tasty meal.</p>
+					</div>
+				</div>
+				<div class="btn_main_1">
+					<div class="read_bt"><a href="~/Contact/">Read More</a></div>
+					<div class="arrow_bt"><a href="#"><i class="fa fa-arrow-right"></i></a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	 
+	@*</section>*@
+
+	<!-- menu section start -->
+	<!-- copyright section start -->
+	@*<div class="copyright_section">
+						<div class="container">
+										<p class="copyright_text">2020 All Rights Reserved. Design by <a href="https://html.design">Free Html Templates</a></p>
+						</div>
+		</div>*@
+	<!-- copyright section end -->
+	<!-- Javascript files-->
+	<!--<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/jquery-3.0.0.min.js"></script>
+	<script src="js/plugin.js"></script>-->
+	<!-- sidebar -->
+	<!--<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="js/custom.js"></script>-->
+	<!-- javascript -->
+	<!--<script src="js/owl.carousel.js"></script>
+	<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+	<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>-->

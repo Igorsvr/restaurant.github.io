@@ -1,0 +1,89 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Testimonials>
+@using ContentModels = Kingrice.Models.UmbracoCmsContent;
+@{
+	var homepage = (ContentModels.Home)Model.Root();
+	Layout = "Layout.cshtml";
+	//var testimonials = Model.Root().Children.Where(x => x.IsDocumentType("testimonials")).FirstOrDefault();
+	var testimonials = (ContentModels.Testimonials)Model.Root().Children().Where(x => x.IsDocumentType("testimonials")).FirstOrDefault();
+}
+
+<!-- testimonial section start -->
+<div class="testimonial_section layout_padding margin_90">
+	<div class="container">
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="row">
+						@{
+							//foreach (ContentModels.Testimonial item in testimonials.Children)
+							foreach (ContentModels.Testimonial item in testimonials.Children.Take(Convert.ToInt32(testimonials.NumberOfTestimonials)))
+							{
+								<div class="col-md-12">
+									<h1 class="testimonial_taital">What Our Clients Say.</h1>
+									@*<p class="testimonial_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+										There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>*@
+									<p class="testimonial_text">@item.TestimonialBio</p>
+									<p class="testimonial_text">@item.TestimonialPosition</p>
+									@*<div class="client_img"><img src="images/client-img.png"></div>*@
+									<div class="client_img"><img src="@item.TestimonialPhoto.Url"></div>
+									@*<h4 class="client_name">Jacksmith sand</h4>*@
+									<h4 class="client_name">@item.TestimonialName</h4>
+									<ul class="testimonial-social d-flex">
+										<li class="testimonial-animate"><a href="@item.TwitterProfileLink"><span class="icon-twitter"></span></a></li>
+										<li class="testimonial-animate"><a href="@item.FbProfileLink"><span class="icon-facebook"></span></a></li>
+										<li class="testimonial-animate"><a href="@item.GoogleProfileLink"><span class="icon-google-plus"></span></a></li>
+										<li class="testimonial-animate"><a href="@item.InstagramProfileLink"><span class="icon-instagram"></span></a></li>
+									</ul>
+								</div>
+
+								@*</div>*@
+
+								@*<div class="carousel-item">
+										<div class="row">
+											<div class="col-md-12">
+												<h1 class="testimonial_taital">What Is Says Our Clients</h1>
+												<p class="testimonial_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+												<div class="client_img"><img src="images/client-img.png"></div>
+												<h4 class="client_name">Jacksmith sand</h4>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="row">
+											<div class="col-md-12">
+												<h1 class="testimonial_taital">What Is Says Our Clients</h1>
+												<p class="testimonial_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+												<div class="client_img"><img src="images/client-img.png"></div>
+												<h4 class="client_name">Jacksmith sand</h4>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="row">
+											<div class="col-md-12">
+												<h1 class="testimonial_taital">What Is Says Our Clients</h1>
+												<p class="testimonial_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+												<div class="client_img"><img src="images/client-img.png"></div>
+												<h4 class="client_name">Jacksmith sand</h4>
+											</div>
+										</div>*@
+								@*@item.TestimonialBIO*@
+								@*</p>*@
+
+
+							}
+						}
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- testimonial section end -->
